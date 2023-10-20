@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>game</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 60px;
+            text-align: center;
+            margin-top: 15px;
+            color: rgb(0, 0, 0);
+            
+        }
+        .r {
+           background-color: red;
+           
+        }
+        .y {
+            background-color: yellow;
+        }
+        .g {
+            background-color: green;
+        }
+        .p {
+            background-color: pink;
+        }
+        .b {
+            background-color: black;
+        }
+        button {
+            padding: 30px;
+        }
+        .aa {
+            display: flex;
+            list-style-type: none;
+            margin-left: 25%;
+            margin-top: 20px;
+        }
+        .box {
+            padding: 30px;
+            margin-left: 30px;
+            height: 30px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .all {
+            display: flex;
+            list-style-type: none;
+            margin-left: 15%;
+            margin-top: 20px;
+        }
+        .se {
+            margin-left: 250px;
+            margin-top: 100px;
+            display: none;
+            text-align: center;
+        }
+        .sub {
+            margin-top: 30px;
+            margin-left: 250px;
+            background-color: blue;
+            color: white;
+            
+        }
+        p {
+            margin-left: 10px;
+            font-size: 25px;
+            margin-top: 30px;
+        }
+
+        body {
+            background-image: linear-gradient(90deg,rgb(247, 35, 35),rgb(244, 32, 131),rgb(238, 88, 211),rgba(0, 0, 255, 0.854));
+        }
+    </style>
+    </head>
+    <body>
+       <h1>FIND THE COLORS</h1>
+       <div class="all">
+        <div>
+       <ul class="aa">
+        <li>
+            <button class="r" value="red" ></button>
+        </li>
+        <li>
+            <input class="box" type="text" onchange="check()" id="t1">
+        </li>
+       </ul>
+       <ul class="aa">
+        <li>
+            <button class="y" value="yellow" ></button>
+        </li>
+        <li>
+            <input class="box" type="text" onchange="check1()" id="t2">
+        </li>
+        </ul>
+
+
+        <ul class="aa">
+            <li>
+                <button class="g" value="green" id="b3"></button>
+            </li>
+            <li>
+                <input class="box" type="text" onchange="check2()" id="t3">
+            </li>
+            </ul>
+
+            <ul class="aa">
+                <li>
+                    <button class="p" value="pink" id="b4"></button>
+                </li>
+                <li>
+                    <input class="box" type="text" onchange="check3()" id="t4">
+                </li>
+                </ul>
+                <ul class="aa">
+                    <li>
+                        <button class="b" value="black" id="b5"></button>
+                    </li>
+                    <li>
+                        <input class="box" type="text" onchange="check4()" id="t5">
+                    </li>
+                    </ul>
+                    
+                    <button class="sub" onclick="touch()">SUBMIT</button>
+                    
+                    </div>
+
+                    <div class="se" id="se">
+                        
+                        <H2>YOUR POINTS</H2>
+                        <p id="a"></p>
+                            <p id="b"></p>
+                    </div>
+                </div>
+           
+    </body>
+
+    <script>
+       let a1=0,a2=0,a3=0,a4=0,a5=0;
+      function check(){
+        
+        m=document.getElementById("t1").value;
+        if(m=="red"){
+            a1=1
+        }
+        else{
+            a1=0
+        }
+
+      } 
+       
+
+
+       function check1(){
+        
+        m=document.getElementById("t2").value;
+        if(m=="yellow"){
+            a2=1
+        }
+        else{
+            a2=0
+        }
+    }
+
+        function check2(){
+        
+        m=document.getElementById("t3").value;
+        if(m=="green"){
+            a3=1
+        }
+        else{
+            a3=0
+        }
+        }
+       
+      
+
+       function check3(){
+        
+        m=document.getElementById("t4").value;
+        if(m=="pink"){
+            a4=1
+        }
+        else{
+            a4=0
+        }
+        }
+       
+
+      function check4(){
+        
+        m=document.getElementById("t5").value;
+        if(m=="black"){
+            a5=1
+        }
+        else{
+            a5=0
+        }
+
+      } 
+
+      
+
+       function touch() {
+        total=a1+a2+a3+a4+a5;
+        document.getElementById("a").innerHTML=total;
+        document.getElementById("se").style.display="block";
+
+        document.getElementById("b").innerHTML=total;
+        if(total==5){
+            document.getElementById("b").innerHTML="hurray!!! you find all";
+
+        }
+        else if(total==1){
+            document.getElementById("b").innerHTML="not bad";
+        }
+
+        else if(total==2){
+            document.getElementById("b").innerHTML="not bad";
+        }
+        else if(total==3){
+            document.getElementById("b").innerHTML="not bad";
+        }
+        else if(total==4){
+            document.getElementById("b").innerHTML="one missed";
+        }
+        else if(total==0){
+            document.getElementById("b").innerHTML="oops!! try Again"
+        }
+
+        
+       }
+
+    
+
+
+      
+
+
+
+       
+    </script>
+
+</html>
